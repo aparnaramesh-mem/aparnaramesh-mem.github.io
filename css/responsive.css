@@ -1,0 +1,223 @@
+/* Breakpoints — 1024 tablet, 900 nav collapse, 640 phone */
+
+@media (max-width: 1024px) {
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 40px;
+  }
+
+  .about-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .awards-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skills-group {
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-container {
+    padding: 0 20px;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Slide-down panel */
+  .nav-menu {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 20px;
+    /* Opaque, not glass: this panel is nested inside .navbar, which already
+       has its own backdrop-filter, and a nested one doesn't composite — the
+       hero showed straight through the open menu. */
+    background: var(--background);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 18px 40px -12px var(--shadow);
+    max-height: calc(100svh - var(--nav-height));
+    overflow-y: auto;
+    transform: translateY(-12px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s var(--ease), transform 0.25s var(--ease-out), visibility 0.25s;
+  }
+
+  .nav-menu.is-open {
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-menu > li {
+    width: 100%;
+  }
+
+  .nav-menu > li > a {
+    display: block;
+    width: 100%;
+    padding: 12px 4px;
+    font-size: 1rem;
+  }
+
+  .nav-menu > li > a::after {
+    display: none;
+  }
+
+  .nav-menu-resume {
+    margin-top: 12px;
+  }
+
+  .nav-resume-btn {
+    display: block;
+    width: 100%;
+    padding: 13px 18px;
+    text-align: center;
+    font-size: 0.9375rem;
+  }
+
+  .nav-menu-theme {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--glass-border);
+  }
+
+  /* Photo moves above the bio on tablet/phone */
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+
+  .about-image-wrap {
+    order: -1;
+  }
+
+  .photo-frame {
+    max-width: 300px;
+  }
+
+  .program-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .skills-group {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .footer-inner {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: calc(var(--nav-height) + 24px) 20px 96px;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+
+  .hero-badge {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-badge-wrap {
+    display: block;
+    width: 100%;
+  }
+
+  .hero-badge-dropdown {
+    width: 100%;
+  }
+
+  .hero-actions {
+    gap: 16px;
+  }
+
+  .hero-cta {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .hero-actions-divider {
+    display: none;
+  }
+
+  .hero-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .block {
+    padding: 76px 20px;
+  }
+
+  .block-contact {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  .exp-card,
+  .program-card {
+    padding: 22px 20px;
+  }
+
+  .exp-card-header {
+    gap: 12px;
+  }
+
+  .award-card {
+    padding: 22px 20px;
+  }
+
+  .awards-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-metrics {
+    gap: 10px;
+  }
+
+  .metric {
+    padding: 15px 10px;
+  }
+
+  .metric-value {
+    font-size: 1.25rem;
+  }
+
+  .footer {
+    padding: 44px 20px 32px;
+  }
+
+  .contact-links-row {
+    gap: 10px 18px;
+  }
+
+  .contact-links-row a {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Very narrow phones — the longest skill tags need room to wrap */
+@media (max-width: 380px) {
+  .skill-tag,
+  .hero-badge-tag {
+    font-size: 0.75rem;
+  }
+}

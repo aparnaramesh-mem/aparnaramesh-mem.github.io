@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+
+  <title>Aparna Ramesh | Technical Project Manager</title>
+  <meta name="description" content="Aparna Ramesh — Technical Project Manager with 5 years delivering telecom and automotive software at Comcast and ZF Friedrichshafen. M.S. Engineering Management, Syracuse University." />
+  <meta name="author" content="Aparna Ramesh" />
+  <link rel="canonical" href="https://aparnaramesh.github.io/" />
+  <meta name="theme-color" content="#050510" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#fafbfc" media="(prefers-color-scheme: light)" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aparnaramesh.github.io/" />
+  <meta property="og:title" content="Aparna Ramesh | Technical Project Manager" />
+  <meta property="og:description" content="5 years delivering telecom and automotive software. 20+ releases led, 40 engineers coordinated. M.S. Engineering Management, Syracuse University." />
+  <meta property="og:image" content="https://aparnaramesh.github.io/assets/aparna-charles@2000w.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Aparna Ramesh | Technical Project Manager" />
+  <meta name="twitter:description" content="5 years delivering telecom and automotive software. M.S. Engineering Management, Syracuse University." />
+  <meta name="twitter:image" content="https://aparnaramesh.github.io/assets/aparna-charles@2000w.jpg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/background.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/blocks.css" />
+  <link rel="stylesheet" href="css/photos.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- Resolve the theme before first paint so there is no flash of the wrong one. -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var theme = (saved === 'light' || saved === 'dark')
+          ? saved
+          : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) { /* private mode — the dark default in the markup stands */ }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aparna Ramesh",
+    "jobTitle": "Technical Project Manager",
+    "url": "https://aparnaramesh.github.io/",
+    "email": "mailto:contact.aparnaramesh@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Syracuse",
+      "addressRegion": "NY",
+      "addressCountry": "US"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Syracuse University — College of Engineering & Computer Science"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "SRM Institute of Science and Technology"
+      }
+    ],
+    "knowsAbout": [
+      "Project Management",
+      "Agile and Waterfall SDLC",
+      "Release Management",
+      "Software Quality Assurance",
+      "Test Automation",
+      "Business Analysis"
+    ],
+    "sameAs": ["https://www.linkedin.com/in/aparna-ramesh-9b391918b"]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Fixed decorative background: orange wash, floating orbs, masked grid -->
+  <div class="background-geometry" aria-hidden="true">
+    <div class="geo-accent-half"></div>
+    <div class="geo-glow geo-glow-1"></div>
+    <div class="geo-glow geo-glow-2"></div>
+    <div class="geo-glow geo-glow-3"></div>
+    <div class="geo-grid"></div>
+  </div>
+
+  <nav class="navbar" aria-label="Primary">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" data-scroll>Aparna</a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about" data-scroll>About</a></li>
+        <li><a href="#experience" data-scroll>Experience</a></li>
+        <li><a href="#programs" data-scroll>Programs</a></li>
+        <li><a href="#skills" data-scroll>Skills</a></li>
+        <li><a href="#awards" data-scroll>Awards</a></li>
+        <li><a href="#contact" data-scroll>Contact</a></li>
+
+        <li class="nav-menu-resume">
+          <a href="assets/Aparna_Ramesh_Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-resume-btn">
+            Resume
+          </a>
+        </li>
+
+        <li class="nav-menu-theme">
+          <button class="theme-switch" id="theme-switch" role="switch" aria-checked="true" aria-label="Switch to light mode">
+            <span class="theme-switch-track">
+              <span class="theme-switch-thumb"></span>
+              <span class="theme-switch-icon theme-switch-sun">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4" />
+                  <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                </svg>
+              </span>
+              <span class="theme-switch-icon theme-switch-moon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              </span>
+            </span>
+          </button>
+        </li>
+      </ul>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============================ HERO ============================ -->
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-eyebrow">Technical Project Manager &middot; Delivery &amp; Quality Engineering</p>
+
+          <h1 class="hero-name">
+            <span class="hero-name-line">Aparna</span>
+            <span class="hero-name-line hero-name-accent">Ramesh</span>
+          </h1>
+
+          <p class="hero-tagline">
+            Five years shipping telecom and automotive software &mdash; on time, at quality.
+          </p>
+
+          <div class="hero-badge-wrap" id="hero-badge-wrap">
+            <button class="hero-badge" id="hero-badge" aria-expanded="false" aria-controls="hero-badge-dropdown">
+              Open to full-time roles
+              <svg class="hero-badge-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+
+            <div class="hero-badge-dropdown glass-card" id="hero-badge-dropdown" hidden>
+              <div class="hero-badge-dropdown-section">
+                <span class="hero-badge-label">Roles</span>
+                <div class="hero-badge-tags">
+                  <span class="hero-badge-tag">Technical Project Manager</span>
+                  <span class="hero-badge-tag">Scrum Master</span>
+                  <span class="hero-badge-tag">Business Analyst</span>
+                  <span class="hero-badge-tag">SDET</span>
+                  <span class="hero-badge-tag">Delivery Manager</span>
+                </div>
+              </div>
+              <div class="hero-badge-dropdown-section">
+                <span class="hero-badge-label">Availability</span>
+                <p class="hero-badge-timeline">
+                  Immediately available &middot; US-wide, open to relocation &middot; On-site, hybrid or remote
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="mailto:contact.aparnaramesh@gmail.com" class="hero-cta">Get in touch</a>
+            <span class="hero-actions-divider" aria-hidden="true"></span>
+            <div class="hero-links">
+              <a href="assets/Aparna_Ramesh_Resume.pdf" target="_blank" rel="noopener noreferrer" class="hero-link-text">
+                Resume
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><path d="M15 3h6v6" /><path d="M10 14L21 3" />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/aparna-ramesh-9b391918b" target="_blank" rel="noopener noreferrer" class="hero-link-icon" aria-label="LinkedIn profile">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.4 0h4.37v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 7v7.44h-4.56v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.53 1.72-2.53 3.49V22H7.62V8z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="hero-scroll" id="hero-scroll" aria-label="Scroll to About">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+    </section>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section id="about" class="block reveal">
+      <div class="block-inner">
+        <span class="block-label">01 &mdash; About</span>
+
+        <div class="about-layout">
+          <div class="about-text">
+            <h2 class="block-title">Delivery, end to end</h2>
+
+            <div class="about-bio">
+              <p>
+                I'm a project management professional with five years in telecom and automotive
+                software delivery &mdash; planning, risk management, stakeholder coordination, and
+                running both Agile and Waterfall to completion.
+              </p>
+              <p>
+                Most of that was at <strong>Comcast</strong>, where I led delivery of 20+ software
+                releases with a team of 40 engineers, and at <strong>ZF Friedrichshafen</strong>
+                supporting AUTOSAR ECU development. I like the part of the job where a messy
+                dependency chain turns into a plan someone can actually execute &mdash; and the part
+                where the release ships on the date we said it would.
+              </p>
+              <p>
+                I'm now at Syracuse University for an M.S. in Engineering Management, focused on
+                Project Management, Technology Valuation and Business Analytics.
+              </p>
+            </div>
+
+            <div class="about-metrics">
+              <div class="metric glass-card">
+                <span class="metric-value">5 yrs</span>
+                <span class="metric-label">Telecom &amp; automotive delivery</span>
+              </div>
+              <div class="metric glass-card">
+                <span class="metric-value">20+</span>
+                <span class="metric-label">Software releases led</span>
+              </div>
+              <div class="metric glass-card">
+                <span class="metric-value">40</span>
+                <span class="metric-label">Engineers coordinated</span>
+              </div>
+              <div class="metric glass-card">
+                <span class="metric-value">100%</span>
+                <span class="metric-label">On-time delivery</span>
+              </div>
+            </div>
+
+            <div class="about-education">
+              <h3 class="about-edu-title">Education</h3>
+              <div class="about-edu-list">
+                <div class="about-edu-item glass-card">
+                  <span class="about-edu-date">Aug 2025 &ndash; May 2027</span>
+                  <h4>M.S. Engineering Management</h4>
+                  <p>Syracuse University, College of Engineering &amp; Computer Science &middot; 3.6 GPA</p>
+                </div>
+                <div class="about-edu-item glass-card">
+                  <span class="about-edu-date">Jul 2016 &ndash; May 2020</span>
+                  <h4>B.Tech, Computer Science &amp; Engineering</h4>
+                  <p>SRM Institute of Science and Technology, Chennai &middot; 90%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-image-wrap">
+            <div class="photo-frame">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="assets/aparna-portrait.webp 400w, assets/aparna-portrait@540w.webp 540w"
+                  sizes="(max-width: 900px) 300px, 400px" />
+                <img
+                  src="assets/aparna-portrait.jpg"
+                  srcset="assets/aparna-portrait.jpg 400w, assets/aparna-portrait@540w.jpg 540w"
+                  sizes="(max-width: 900px) 280px, 400px"
+                  width="400" height="533"
+                  fetchpriority="high"
+                  alt="Aparna Ramesh" />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== EXPERIENCE ========================== -->
+    <section id="experience" class="block reveal">
+      <div class="block-inner">
+        <span class="block-label">02 &mdash; Experience</span>
+        <h2 class="block-title">Where I've delivered</h2>
+
+        <div class="exp-cards">
+
+          <article class="exp-card glass-card">
+            <div class="exp-card-header">
+              <a href="https://corporate.comcast.com" target="_blank" rel="noopener noreferrer" class="exp-card-logo" aria-label="Comcast website">
+                <span aria-hidden="true">C</span>
+              </a>
+              <div class="exp-card-heading">
+                <span class="exp-card-date">Apr 2023 &ndash; Jul 2025</span>
+                <h3>Senior Software Development Engineer, Test</h3>
+                <p class="exp-card-company">Comcast &middot; Chennai, India</p>
+              </div>
+            </div>
+            <ul class="exp-card-bullets">
+              <li>Led delivery of 20+ software releases with 40 engineers, coordinating cross-functional teams and timelines and collaborating with stakeholders to reach 100% on-time delivery and 95%+ defect detection through API (Postman) and SQL validation</li>
+              <li>Improved release efficiency by 40% by introducing Selenium automation frameworks and driving process optimization &mdash; recognized with the Comcast Circle of Success, Spotlight and Champ Awards for delivery excellence</li>
+            </ul>
+          </article>
+
+          <article class="exp-card glass-card">
+            <div class="exp-card-header">
+              <a href="https://corporate.comcast.com" target="_blank" rel="noopener noreferrer" class="exp-card-logo" aria-label="Comcast website">
+                <span aria-hidden="true">C</span>
+              </a>
+              <div class="exp-card-heading">
+                <span class="exp-card-date">Aug 2021 &ndash; Mar 2023</span>
+                <h3>Software Development Engineer, Test</h3>
+                <p class="exp-card-company">Comcast &middot; Chennai, India</p>
+              </div>
+            </div>
+            <ul class="exp-card-bullets">
+              <li>Applied Agile and Waterfall SDLC practices to manage feature delivery and defect resolution, holding 100% adherence to project timelines and consistent release quality</li>
+              <li>Oversaw manual, regression, API and UAT testing to 98%+ defect resolution while mentoring team members and driving Certificate Driven Development (CDD) initiatives &mdash; recognized with two Comcast High-Five Champ Awards</li>
+            </ul>
+          </article>
+
+          <article class="exp-card glass-card">
+            <div class="exp-card-header">
+              <a href="https://www.zf.com" target="_blank" rel="noopener noreferrer" class="exp-card-logo" aria-label="ZF Friedrichshafen website">
+                <span aria-hidden="true">ZF</span>
+              </a>
+              <div class="exp-card-heading">
+                <span class="exp-card-date">Jun 2020 &ndash; May 2021</span>
+                <h3>Software Engineer</h3>
+                <p class="exp-card-company">ZF Friedrichshafen &middot; Hyderabad, India</p>
+              </div>
+            </div>
+            <ul class="exp-card-bullets">
+              <li>Spearheaded support for the AUTOSAR development team by enhancing diagnostics, controlling key lifecycle activities and performing database validation &mdash; improving data accuracy by ~25% and reducing defect leakage by ~30%</li>
+              <li>Performed ESCAN unit testing in Java, achieving 90%+ defect detection and keeping milestone delivery on schedule</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== PROGRAMS =========================== -->
+    <section id="programs" class="block reveal">
+      <div class="block-inner">
+        <span class="block-label">03 &mdash; Programs</span>
+        <h2 class="block-title">What I shipped</h2>
+        <p class="block-lede">
+          The two long-running programs behind the roles above &mdash; what they were, the systems
+          involved, and what came out of them.
+        </p>
+
+        <div class="program-grid">
+
+          <article class="program-card glass-card">
+            <div class="program-card-top">
+              <span class="program-card-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+              </span>
+              <span class="program-card-date">Aug 2021 &ndash; Jul 2025</span>
+            </div>
+            <h3>Comcast Orion Mid-Market</h3>
+            <p class="program-card-sub">Telecom service delivery &amp; order management</p>
+            <ul class="program-card-bullets">
+              <li>Managed end-to-end delivery of B2C telecom services &mdash; Metro Ethernet, Non-Metro Ethernet, OTT and Wi-Fi &mdash; through Orion CRM, keeping order management clean from sales to billing</li>
+              <li>Coordinated testing and validation across Amdocs OSO, ARM and SQO and the Comcast Tech 360 application to hold service fulfilment quality and on-time delivery</li>
+            </ul>
+            <div class="program-card-tags">
+              <span>Orion CRM</span><span>Amdocs OSO / ARM / SQO</span><span>Tech 360</span><span>Order-to-billing</span>
+            </div>
+          </article>
+
+          <article class="program-card glass-card">
+            <div class="program-card-top">
+              <span class="program-card-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="16" height="16" rx="2" /><rect x="9" y="9" width="6" height="6" /><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2" />
+                </svg>
+              </span>
+              <span class="program-card-date">Jun 2020 &ndash; Feb 2021</span>
+            </div>
+            <h3>AUTOSAR ECU Platform</h3>
+            <p class="program-card-sub">Automotive embedded architecture at ZF</p>
+            <ul class="program-card-bullets">
+              <li>Led support for AUTOSAR-compliant ECU architecture and spearheaded integration across 6+ modules and their lifecycle activities, cutting delivery timelines by ~25%</li>
+              <li>Executed unit testing on 120+ code paths and validated AUTOSAR ESCAN procedures, catching critical defects early and lifting test coverage by ~30%</li>
+            </ul>
+            <div class="program-card-tags">
+              <span>AUTOSAR</span><span>ECU integration</span><span>ESCAN</span><span>Java unit testing</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ SKILLS ============================ -->
+    <section id="skills" class="block reveal">
+      <div class="block-inner">
+        <span class="block-label">04 &mdash; Skills</span>
+        <h2 class="block-title">What I work with</h2>
+
+        <div class="skills-flow">
+          <div class="skills-group">
+            <span class="skills-group-label">Project Management</span>
+            <div class="skills-tags">
+              <span class="skill-tag">WBS &amp; Critical Path</span>
+              <span class="skill-tag">Project Charter</span>
+              <span class="skill-tag">RACI Matrix</span>
+              <span class="skill-tag">RAID Management</span>
+              <span class="skill-tag">SWOT Analysis</span>
+              <span class="skill-tag">Scheduling &amp; Estimation</span>
+              <span class="skill-tag">Risk &amp; Issue Management</span>
+              <span class="skill-tag">Stakeholder Management</span>
+              <span class="skill-tag">Change Control</span>
+              <span class="skill-tag">Status Reporting</span>
+              <span class="skill-tag">Sprint Planning</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <span class="skills-group-label">Frameworks</span>
+            <div class="skills-tags">
+              <span class="skill-tag">Agile SDLC (Scrum / Kanban)</span>
+              <span class="skill-tag">Waterfall SDLC</span>
+              <span class="skill-tag">STLC</span>
+              <span class="skill-tag">Release Management</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <span class="skills-group-label">Tools</span>
+            <div class="skills-tags">
+              <span class="skill-tag">Jira</span>
+              <span class="skill-tag">Rally</span>
+              <span class="skill-tag">ALM Octane</span>
+              <span class="skill-tag">Confluence</span>
+              <span class="skill-tag">MS Project</span>
+              <span class="skill-tag">MS Visio</span>
+              <span class="skill-tag">Tableau</span>
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">Git</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <span class="skills-group-label">Quality Engineering</span>
+            <div class="skills-tags">
+              <span class="skill-tag">End-to-End</span>
+              <span class="skill-tag">Functional</span>
+              <span class="skill-tag">Regression</span>
+              <span class="skill-tag">Sanity</span>
+              <span class="skill-tag">API</span>
+              <span class="skill-tag">GUI</span>
+              <span class="skill-tag">UAT</span>
+              <span class="skill-tag">Exploratory</span>
+              <span class="skill-tag">Defect Management</span>
+              <span class="skill-tag">Root Cause Analysis</span>
+              <span class="skill-tag">Test Case Design</span>
+              <span class="skill-tag">Postman</span>
+              <span class="skill-tag">SOAP UI</span>
+              <span class="skill-tag">Selenium</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <span class="skills-group-label">Programming &amp; Data</span>
+            <div class="skills-tags">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">MS SQL Server</span>
+              <span class="skill-tag">R Commander</span>
+              <span class="skill-tag">Database Validation</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <span class="skills-group-label">Cloud &amp; AI</span>
+            <div class="skills-tags">
+              <span class="skill-tag">Azure</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">GCP</span>
+              <span class="skill-tag">Prompt Engineering</span>
+              <span class="skill-tag">Generative AI (LLM)</span>
+              <span class="skill-tag">ML Fundamentals</span>
+              <span class="skill-tag">NLP Basics</span>
+              <span class="skill-tag">Claude</span>
+              <span class="skill-tag">Copilot</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <span class="skills-group-label">Analytics &amp; Business</span>
+            <div class="skills-tags">
+              <span class="skill-tag">Advanced Excel</span>
+              <span class="skill-tag">Pivot Tables &amp; Power Query</span>
+              <span class="skill-tag">XLOOKUP</span>
+              <span class="skill-tag">Data Visualization</span>
+              <span class="skill-tag">Statistical Reasoning</span>
+              <span class="skill-tag">Cost-Benefit (NPV / IRR)</span>
+              <span class="skill-tag">Process Optimization</span>
+              <span class="skill-tag">Google Analytics</span>
+              <span class="skill-tag">KPI Reporting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ AWARDS ============================ -->
+    <section id="awards" class="block reveal">
+      <div class="block-inner">
+        <span class="block-label">05 &mdash; Awards</span>
+        <h2 class="block-title">Recognition</h2>
+
+        <div class="awards-row">
+          <div class="award-card glass-card">
+            <span class="award-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6" /><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+            </span>
+            <h3>Circle of Success Award</h3>
+            <p class="award-meta">Comcast &middot; 2024</p>
+          </div>
+
+          <div class="award-card glass-card">
+            <span class="award-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6" /><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+            </span>
+            <h3>Spotlight &amp; Champ Award</h3>
+            <p class="award-meta">Comcast &middot; 2024</p>
+          </div>
+
+          <div class="award-card glass-card">
+            <span class="award-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6" /><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+              </svg>
+            </span>
+            <h3>High-Five Champ Award</h3>
+            <p class="award-meta">Comcast &middot; 2022 &amp; 2023</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <section id="contact" class="block block-contact reveal">
+      <div class="contact-media" aria-hidden="true">
+        <picture>
+          <source
+            type="image/webp"
+            srcset="assets/aparna-charles.webp 1200w, assets/aparna-charles@2000w.webp 2000w"
+            sizes="100vw" />
+          <img
+            src="assets/aparna-charles.jpg"
+            srcset="assets/aparna-charles.jpg 1200w, assets/aparna-charles@2000w.jpg 2000w"
+            sizes="100vw"
+            width="2000" height="1126"
+            loading="lazy" decoding="async"
+            alt="" />
+        </picture>
+        <span class="contact-scrim"></span>
+      </div>
+
+      <div class="block-inner block-contact-inner">
+        <span class="block-label">06 &mdash; Contact</span>
+        <h2 class="block-title block-contact-title">Let's work together</h2>
+        <p class="block-contact-desc">
+          Open to full-time Technical Project Manager, Scrum Master, Business Analyst and SDET
+          roles &mdash; anywhere in the US. Happy to talk about anything delivery.
+        </p>
+
+        <a href="mailto:contact.aparnaramesh@gmail.com" class="contact-cta">Get in touch</a>
+
+        <div class="contact-links-row">
+          <a href="https://www.linkedin.com/in/aparna-ramesh-9b391918b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="assets/Aparna_Ramesh_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href="mailto:contact.aparnaramesh@gmail.com">contact.aparnaramesh@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#home" class="footer-logo" data-scroll>Aparna Ramesh</a>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#about" data-scroll>About</a>
+        <a href="#experience" data-scroll>Experience</a>
+        <a href="#programs" data-scroll>Programs</a>
+        <a href="#skills" data-scroll>Skills</a>
+        <a href="#contact" data-scroll>Contact</a>
+      </nav>
+
+      <div class="footer-socials">
+        <a href="mailto:contact.aparnaramesh@gmail.com" aria-label="Email Aparna">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="4" width="20" height="16" rx="2" /><path d="M22 7l-10 6L2 7" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/aparna-ramesh-9b391918b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.4 0h4.37v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 7v7.44h-4.56v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.53 1.72-2.53 3.49V22H7.62V8z" />
+          </svg>
+        </a>
+      </div>
+
+      <p class="footer-copyright">&copy; 2026 Aparna Ramesh &middot; Syracuse, NY</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

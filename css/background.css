@@ -1,0 +1,98 @@
+/* Fixed background geometry — orange wash, floating orbs, masked grid */
+
+.background-geometry {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.geo-accent-half {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160%;
+  height: 420px;
+  background: radial-gradient(
+    ellipse 70% 90% at 50% 0%,
+    rgba(247, 105, 0, 0.45) 0%,
+    rgba(247, 105, 0, 0.25) 30%,
+    rgba(247, 105, 0, 0.08) 55%,
+    transparent 75%
+  );
+}
+
+[data-theme="light"] .geo-accent-half {
+  background: radial-gradient(
+    ellipse 70% 90% at 50% 0%,
+    rgba(247, 105, 0, 0.22) 0%,
+    rgba(247, 105, 0, 0.12) 30%,
+    rgba(247, 105, 0, 0.04) 55%,
+    transparent 75%
+  );
+}
+
+.geo-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: var(--glow-opacity);
+  animation: floatOrb 25s ease-in-out infinite;
+}
+
+.geo-glow-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(43, 114, 215, 0.25) 0%, transparent 70%);
+  top: -20%;
+  right: -10%;
+}
+
+.geo-glow-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(247, 105, 0, 0.2) 0%, transparent 70%);
+  bottom: -10%;
+  left: -15%;
+  animation-delay: -8s;
+}
+
+.geo-glow-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 14, 84, 0.25) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -16s;
+}
+
+.geo-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 15%, transparent 70%);
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 15%, transparent 70%);
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -30px) scale(1.03); }
+  66% { transform: translate(-15px, 25px) scale(0.98); }
+}
+
+/* geo-glow-3 is centred with a transform, so it needs its own keyframes */
+.geo-glow-3 {
+  animation-name: floatOrbCentered;
+}
+
+@keyframes floatOrbCentered {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  33% { transform: translate(calc(-50% + 20px), calc(-50% - 30px)) scale(1.03); }
+  66% { transform: translate(calc(-50% - 15px), calc(-50% + 25px)) scale(0.98); }
+}
