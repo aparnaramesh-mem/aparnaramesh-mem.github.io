@@ -1,4 +1,4 @@
-# aparnaramesh.github.io
+# aparnaramesh-mem.github.io
 
 Personal site for **Aparna Ramesh** — Technical Project Manager, five years in telecom and
 automotive software delivery, currently M.S. Engineering Management at Syracuse University.
@@ -10,28 +10,33 @@ and GitHub Pages serves it.
 
 ## Publishing it (one-time)
 
-The site is built and committed locally but has never been pushed — the GitHub account doesn't
-exist yet. To go live:
+The site is built and committed locally but has never been pushed. The remote is already
+configured. To go live:
 
-1. **Create the GitHub account** with the username **`aparnaramesh`**. This has to match exactly:
-   a GitHub Pages user site is only served from `<username>.github.io`.
-2. **Create a new public repository** named exactly **`aparnaramesh.github.io`**. Don't add a
-   README, .gitignore or licence — this folder already has a commit.
-3. **Push** from this folder:
-
-```bash
-git remote add origin https://github.com/aparnaramesh/aparnaramesh.github.io.git
-```
+1. **Create a new public repository** on the `aparnaramesh-mem` account, named exactly
+   **`aparnaramesh-mem.github.io`**. The name has to match the username — a GitHub Pages user
+   site is only served from `<username>.github.io`. Don't add a README, .gitignore or licence;
+   this folder already has commits.
+2. **Push** from this folder:
 
 ```bash
 git push -u origin main
 ```
 
-4. **Turn Pages on**: repo **Settings ▸ Pages ▸ Build and deployment**, set Source to
+   Git will prompt for credentials. On Windows, Git Credential Manager opens a browser sign-in —
+   that's the cleanest route and needs no token. If it asks for a username and password instead,
+   the "password" is a personal access token with `repo` scope, entered at that prompt.
+
+3. **Turn Pages on**: repo **Settings ▸ Pages ▸ Build and deployment**, set Source to
    *Deploy from a branch*, branch `main`, folder `/ (root)`, then Save.
-5. Wait a minute or two. The site is live at **https://aparnaramesh.github.io/**
+4. Wait a minute or two. The site is live at **https://aparnaramesh-mem.github.io/**
 
 After that, every `git push` republishes.
+
+> **If the account is ever renamed to `aparnaramesh`** (the username was free as of Aug 2026),
+> the site URL changes with it. Rename the repo to match, then update the five absolute URLs in
+> `index.html` — the canonical tag, `og:url`, `og:image`, `twitter:image`, and the JSON-LD
+> `url` — plus the links in this file.
 
 > The commits are authored as `Aparna Ramesh <contact.aparnaramesh@gmail.com>` via a repo-local
 > git config, so the history isn't attributed to whoever's machine built it.
