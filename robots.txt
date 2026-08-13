@@ -1,0 +1,15 @@
+# Crawling is allowed on purpose.
+#
+# The HTML pages carry <meta name="robots" content="noindex, nofollow">, and a
+# crawler has to be able to FETCH a page to read that tag. Blocking with
+# "Disallow: /" here would have the opposite of the intended effect: crawlers
+# would never see the noindex, and the bare URL could still be listed in
+# search results from links found elsewhere.
+
+User-agent: *
+Allow: /
+
+# The resume PDF is the exception. A PDF can't carry a meta tag, and GitHub
+# Pages doesn't let us set an X-Robots-Tag header, so refusing the crawl is
+# the only lever available for it.
+Disallow: /assets/Aparna_Ramesh_Resume.pdf
