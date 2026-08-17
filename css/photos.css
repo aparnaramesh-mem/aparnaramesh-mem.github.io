@@ -29,7 +29,10 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 400px;
+  /* Matches the 320x400 source. A headshot wants to be smaller than the
+     environmental portrait it replaced -- scaling it up would only expose
+     the crop's resolution ceiling. */
+  max-width: 300px;
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--glass-bg);
@@ -43,22 +46,24 @@
   width: 100%;
   height: auto;
   display: block;
-  /* Feather the bottom edge so the photo dissolves into the section
-     instead of stopping on a hard rectangle. */
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 76%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 76%, transparent 100%);
+  /* Only a whisper of a feather. The earlier, much stronger fade suited a
+     full-length environmental portrait; against a head-and-shoulders crop it
+     dissolved the subject mid-torso and read as a truncated image rather
+     than a deliberate edge. A headshot wants a clean frame. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 93%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 93%, transparent 100%);
 }
 
-/* Seat the base of the photo into the page background */
+/* Just enough to seat the base against the page, not to swallow it */
 .photo-frame::after {
   content: '';
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 34%;
+  height: 14%;
   pointer-events: none;
-  background: linear-gradient(to bottom, transparent 0%, var(--background) 92%);
+  background: linear-gradient(to bottom, transparent 0%, var(--background) 96%);
 }
 
 /* --------------------------- Contact band --------------------------- */

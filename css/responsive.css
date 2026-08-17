@@ -2,7 +2,7 @@
 
 @media (max-width: 1024px) {
   .about-layout {
-    grid-template-columns: minmax(0, 1fr) 320px;
+    grid-template-columns: minmax(0, 1fr) 260px;
     gap: 40px;
   }
 
@@ -103,7 +103,7 @@
   }
 
   .photo-frame {
-    max-width: 300px;
+    max-width: 260px;
   }
 
   .program-grid {

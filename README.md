@@ -75,7 +75,7 @@ Two are used, both processed from the originals in `../pics/`:
 
 | Slot | Source file | Why |
 |---|---|---|
-| About portrait | `IMG-20260626-WA0020.jpg` | The only shot with direct eye contact and a clean read — and the orange top happens to sit almost exactly on Syracuse Orange `#F76900`, so it needs no colour grading. |
+| About portrait | `IMG-20260626-WA0020.jpg` | The only shot with direct eye contact and a clean read. Cropped head-and-shoulders and rendered in warm black & white to read as a professional portrait — the original is a casual bright-orange top against green ivy, and removing the colour is what does most of that work. **None of the twelve supplied photos is business attire; a real headshot would beat this.** The crop is as tight as the source allows — a true headshot would land near 208×260 and be unusable — so the frame displays at 300px rather than being scaled up. |
 | Contact band | `eb0b3639-…JPG` | Natively wide, subject centred, muted grey-green tones that let the orange accents stay the loudest thing on the page. |
 
 Considered and not used:
@@ -88,6 +88,16 @@ Considered and not used:
 - `IMG-20260222-WA0000.jpg` — aviary. Wire mesh and a service door read as a zoo snapshot.
 - `IMG-20251231-WA0063/0075.jpg` — Bunker Hill. Highest resolution available (2252×4000), but
   she's small in a very tall frame; any crop big enough to see her throws away the monument.
+- `IMG-20250907-WA0010.jpg`, `IMG-20260310-WA0000.jpg` — festive/occasion wear. Lovely photos,
+  wrong register for a delivery-management portfolio.
+
+### Replacing this with a real headshot
+
+Worth doing, and it takes about ten minutes: plain wall, face a window, blazer or a plain dark
+top, phone at eye level on portrait mode, shot by someone else from ~1.5 m. Drop the file in
+`../pics/`, point the portrait entry in `tools/build-images.py` at it, adjust the crop box, and
+remove `"treatment": "bw"` if the new photo works in colour. Then re-run the script — the
+`<picture>` markup doesn't need to change.
 
 ### Swapping a photo
 

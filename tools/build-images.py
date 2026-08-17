@@ -13,7 +13,7 @@ Alternates that were considered are listed in README.md.
 
 from pathlib import Path
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 
 REPO = Path(__file__).resolve().parent.parent
 SOURCE_DIR = Path(r"C:\Users\Koushik.B\Desktop\personal\pics")
@@ -25,12 +25,20 @@ IMAGES = [
     {
         "name": "aparna-portrait",
         "source": "IMG-20260626-WA0020.jpg",
-        # 960x1280 original. 3:4 environmental portrait, bottom-anchored and
-        # centred on the subject, with ~19% headroom. Deliberately not a tight
-        # headshot -- cropping closer would upscale past the source and go soft.
-        "crop": (285, 560, 825, 1280),
-        "widths": [400, 540],
-        "quality": 84,
+        # 960x1280 original. Head-and-shoulders 4:5 crop -- as tight as this
+        # source allows (a true headshot would land around 208x260 and be
+        # unusable). Rendered warm black & white: the original is a casual
+        # bright-orange top against green ivy, and dropping the colour is what
+        # makes it read as a professional portrait rather than a lifestyle shot.
+        "crop": (395, 645, 715, 1045),
+        "treatment": "bw",
+        # 320 is native. 560 is a deliberate ~1.75x Lanczos upscale with
+        # unsharp masking, purely so high-DPI screens get a sharpened asset
+        # instead of the browser stretching the 320 one. It adds no real
+        # detail; monochrome carries the upscale better than colour would.
+        "widths": [320, 560],
+        "allow_upscale": True,
+        "quality": 88,
     },
     {
         "name": "aparna-charles",
@@ -50,6 +58,17 @@ def strip(im: Image.Image) -> Image.Image:
     return Image.frombytes(im.mode, im.size, im.tobytes())
 
 
+def to_bw(im: Image.Image, contrast: float = 1.14) -> Image.Image:
+    """Warm-neutral monochrome -- straight greyscale reads clinical."""
+    grey = ImageEnhance.Contrast(ImageOps.grayscale(im)).enhance(contrast).convert("RGB")
+    r, g, b = grey.split()
+    return Image.merge("RGB", (
+        r.point(lambda v: min(255, int(v * 1.06))),
+        g,
+        b.point(lambda v: int(v * 0.95)),
+    ))
+
+
 def build(spec: dict) -> None:
     src = SOURCE_DIR / spec["source"]
     if not src.exists():
@@ -60,16 +79,27 @@ def build(spec: dict) -> None:
     if spec["crop"]:
         im = im.crop(spec["crop"])
 
+    if spec.get("treatment") == "bw":
+        im = to_bw(im)
+
     base_w, base_h = im.size
     ratio = base_h / base_w
 
     for width in spec["widths"]:
-        if width > base_w:
+        if width > base_w and not spec.get("allow_upscale"):
             print(f"  ! skipping {width}w -- would upscale past the {base_w}px source")
             continue
 
         height = round(width * ratio)
-        resized = strip(im.resize((width, height), Image.Resampling.LANCZOS))
+        resized = im.resize((width, height), Image.Resampling.LANCZOS)
+
+        if width > base_w:
+            # Upscales go soft; a light unsharp pass keeps edges defined.
+            resized = resized.filter(
+                ImageFilter.UnsharpMask(radius=1.4, percent=115, threshold=3)
+            )
+
+        resized = strip(resized)
 
         # 1x keeps the bare name so the src fallback is the small one.
         suffix = "" if width == min(spec["widths"]) else f"@{width}w"
