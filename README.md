@@ -75,7 +75,7 @@ Two are used, both processed from the originals in `../pics/`:
 
 | Slot | Source file | Why |
 |---|---|---|
-| About portrait | `IMG-20260626-WA0020.jpg` | The only shot with direct eye contact and a clean read. Cropped head-and-shoulders and rendered in warm black & white to read as a professional portrait — the original is a casual bright-orange top against green ivy, and removing the colour is what does most of that work. **None of the twelve supplied photos is business attire; a real headshot would beat this.** The crop is as tight as the source allows — a true headshot would land near 208×260 and be unusable — so the frame displays at 300px rather than being scaled up. |
+| About portrait | `IMG-20260626-WA0020.jpg` | The only shot with direct eye contact and a clean read. Cropped head-and-shoulders so it reads as a portrait rather than a lifestyle photo, and kept in colour — the orange top lands close to Syracuse Orange `#F76900`, so it ties into the accent palette instead of competing with it. **None of the twelve supplied photos is business attire; a real headshot would beat this.** The crop is as tight as the source allows — a true headshot would land near 208×260 and be unusable — so the frame displays at 300px rather than being scaled up. |
 | Contact band | `eb0b3639-…JPG` | Natively wide, subject centred, muted grey-green tones that let the orange accents stay the loudest thing on the page. |
 
 Considered and not used:
@@ -95,9 +95,12 @@ Considered and not used:
 
 Worth doing, and it takes about ten minutes: plain wall, face a window, blazer or a plain dark
 top, phone at eye level on portrait mode, shot by someone else from ~1.5 m. Drop the file in
-`../pics/`, point the portrait entry in `tools/build-images.py` at it, adjust the crop box, and
-remove `"treatment": "bw"` if the new photo works in colour. Then re-run the script — the
-`<picture>` markup doesn't need to change.
+`../pics/`, point the portrait entry in `tools/build-images.py` at it and adjust the crop box,
+then re-run the script — the `<picture>` markup doesn't need to change.
+
+The script also supports `"treatment": "bw"` on any image entry, which applies a warm-neutral
+monochrome. It was tried on this portrait and dropped for looking flat against the rest of the
+page, but it's there if a future photo suits it.
 
 ### Swapping a photo
 

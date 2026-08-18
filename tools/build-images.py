@@ -27,11 +27,9 @@ IMAGES = [
         "source": "IMG-20260626-WA0020.jpg",
         # 960x1280 original. Head-and-shoulders 4:5 crop -- as tight as this
         # source allows (a true headshot would land around 208x260 and be
-        # unusable). Rendered warm black & white: the original is a casual
-        # bright-orange top against green ivy, and dropping the colour is what
-        # makes it read as a professional portrait rather than a lifestyle shot.
+        # unusable). Kept in colour; the tight crop alone does enough to lift
+        # it out of "lifestyle shot", and the orange top ties into the palette.
         "crop": (395, 645, 715, 1045),
-        "treatment": "bw",
         # 320 is native. 560 is a deliberate ~1.75x Lanczos upscale with
         # unsharp masking, purely so high-DPI screens get a sharpened asset
         # instead of the browser stretching the 320 one. It adds no real
