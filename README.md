@@ -24,8 +24,8 @@ and deployment workflow. Review local changes before pushing.
 - assets/fonts/: self-hosted Inter and its SIL Open Font License.
 - tools/build-images.py: responsive portrait derivatives and social preview.
 
-The original photography remains in assets/. The professional portrait is an
-AI-assisted edit reviewed during the redesign. Its source is
+The original photography remains in assets/. The professional portrait is the
+reviewed AI-assisted edit with a navy blouse and softly blurred greenery. Its source is
 assets/aparna-professional-source.png; no original photo was overwritten.
 
 To regenerate the optimized WebP/JPEG versions and social card:
