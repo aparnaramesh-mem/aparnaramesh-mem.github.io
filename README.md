@@ -1,166 +1,63 @@
-# aparnaramesh-mem.github.io
+# Aparna Ramesh — personal portfolio
 
-Personal site for **Aparna Ramesh** — Technical Project Manager, five years in telecom and
-automotive software delivery, currently M.S. Engineering Management at Syracuse University.
+A buildless portfolio for technical project management, software delivery and
+quality engineering. Plain HTML, CSS and JavaScript, hosted with GitHub Pages.
 
-Plain HTML, CSS and vanilla JavaScript. **No build step, no npm, no CI.** Edit a file, push,
-and GitHub Pages serves it.
+## Local preview
 
----
+From this folder:
 
-## Publishing it (one-time)
+    python3 -m http.server 4173 --bind 127.0.0.1
 
-The site is built and committed locally but has never been pushed. The remote is already
-configured. To go live:
+Open http://127.0.0.1:4173/. There is no package installation or build step.
 
-1. **Create a new public repository** on the `aparnaramesh-mem` account, named exactly
-   **`aparnaramesh-mem.github.io`**. The name has to match the username — a GitHub Pages user
-   site is only served from `<username>.github.io`. Don't add a README, .gitignore or licence;
-   this folder already has commits.
-2. **Push** from this folder:
+Serving a local preview does not publish changes. GitHub Pages publishes the
+repository root from main; pushing that branch triggers the existing Pages build
+and deployment workflow. Review local changes before pushing.
 
-```bash
-git push -u origin main
-```
+## Where to edit
 
-   Git will prompt for credentials. On Windows, Git Credential Manager opens a browser sign-in —
-   that's the cleanest route and needs no token. If it asks for a username and password instead,
-   the "password" is a personal access token with `repo` scope, entered at that prompt.
+- index.html: introduction, programs, experience, education, skills and contact.
+- css/site.css: theme tokens, layout, responsive and print styles.
+- js/main.js: mobile navigation, current-section state, theme and email copy.
+- assets/Aparna_Ramesh_Resume.pdf: résumé, shared by every résumé link and /resume/.
+- assets/fonts/: self-hosted Inter and its SIL Open Font License.
+- tools/build-images.py: responsive portrait derivatives and social preview.
 
-3. **Turn Pages on**: repo **Settings ▸ Pages ▸ Build and deployment**, set Source to
-   *Deploy from a branch*, branch `main`, folder `/ (root)`, then Save.
-4. Wait a minute or two. The site is live at **https://aparnaramesh-mem.github.io/**
+The original photography remains in assets/. The professional portrait is an
+AI-assisted edit reviewed during the redesign. Its source is
+assets/aparna-professional-source.png; no original photo was overwritten.
 
-After that, every `git push` republishes.
+To regenerate the optimized WebP/JPEG versions and social card:
 
-> **If the account is ever renamed to `aparnaramesh`** (the username was free as of Aug 2026),
-> the site URL changes with it. Rename the repo to match, then update the five absolute URLs in
-> `index.html` — the canonical tag, `og:url`, `og:image`, `twitter:image`, and the JSON-LD
-> `url` — plus the links in this file.
+    python3 -m pip install Pillow
+    python3 tools/build-images.py
 
-> The commits are authored as `Aparna Ramesh <contact.aparnaramesh@gmail.com>` via a repo-local
-> git config, so the history isn't attributed to whoever's machine built it.
+The source is only resized and encoded by the script; it is not retouched.
 
----
+## Content decisions
 
-## Editing the content
+- Preserve formal job titles; distinguish employment dates from program dates.
+- Lead with scope: five years, 20+ releases, and 40 engineers coordinated.
+- Omit undefined percentage claims until baselines and measurement periods can be
+  provided. Do not reinterpret release efficiency as cycle-time reduction.
+- Use neutral telecom service wording until the customer segment is confirmed.
+- The Syracuse degree is in progress, expected May 2027.
+- Search indexing remains intentionally disabled with noindex, nofollow.
+  Review that separately if name-search discovery becomes a goal.
 
-Everything is in [`index.html`](index.html) — there's no CMS and no data file. Each section is
-marked with a comment banner (`<!-- ===== EXPERIENCE ===== -->`) so it's easy to find what you
-want. Some common edits:
+## Behavior and accessibility
 
-| Change | Where |
-|---|---|
-| Job title / tagline | `.hero-eyebrow`, `.hero-tagline` in the HERO section |
-| Roles being targeted | `.hero-badge-tag` list, and the CONTACT paragraph |
-| Availability line | `.hero-badge-timeline` |
-| Add a job | copy an `<article class="exp-card glass-card">` block |
-| Add a skill | copy a `<span class="skill-tag">` into the right group |
-| Add an award | copy an `<div class="award-card glass-card">` block |
-| Email address | search for `contact.aparnaramesh@gmail.com` (appears 5×) |
+All sections are visible without JavaScript. Native program disclosures, anchor
+links, email links and the résumé work without enhancement. Without JavaScript
+the mobile navigation is shown; enhanced navigation collapses only after its
+handlers are installed. The theme defaults to light and remembers an explicit
+choice in local storage.
 
-If you take the availability badge down when the search ends, delete the whole
-`<div class="hero-badge-wrap">` block — nothing else depends on it.
+JavaScript adds aria-current for section navigation, focuses anchor destinations,
+supports Escape/outside-click dismissal for the mobile menu, and offers a copy
+email action on secure contexts with clipboard support. There is no analytics,
+form submission service or account system.
 
-### Replacing the resume PDF
-
-Overwrite `assets/Aparna_Ramesh_Resume.pdf` with the new file, keeping the same filename. Both
-the nav button, the hero link, the contact row and `/resume/` point at that path.
-
----
-
-## Photos
-
-Two are used, both processed from the originals in `../pics/`:
-
-| Slot | Source file | Why |
-|---|---|---|
-| About portrait | `IMG-20260626-WA0020.jpg` | The only shot with direct eye contact and a clean read. Cropped head-and-shoulders so it reads as a portrait rather than a lifestyle photo, and kept in colour — the orange top lands close to Syracuse Orange `#F76900`, so it ties into the accent palette instead of competing with it. **None of the twelve supplied photos is business attire; a real headshot would beat this.** The crop is as tight as the source allows — a true headshot would land near 208×260 and be unusable — so the frame displays at 300px rather than being scaled up. |
-| Contact band | `eb0b3639-…JPG` | Natively wide, subject centred, muted grey-green tones that let the orange accents stay the loudest thing on the page. |
-
-Considered and not used:
-
-- `IMG-20260626-WA0021.jpg` — ivy door, looking away. The most editorial of the set and the
-  runner-up for the About slot; it loses only because eye contact matters more in the one photo
-  that introduces her.
-- `IMG-20251230-WA0026/27.jpg` — MIT Great Dome. Good photo, but a recognisable MIT landmark on
-  a page that says "Syracuse University" invites the wrong conclusion about where she studies.
-- `IMG-20260222-WA0000.jpg` — aviary. Wire mesh and a service door read as a zoo snapshot.
-- `IMG-20251231-WA0063/0075.jpg` — Bunker Hill. Highest resolution available (2252×4000), but
-  she's small in a very tall frame; any crop big enough to see her throws away the monument.
-- `IMG-20250907-WA0010.jpg`, `IMG-20260310-WA0000.jpg` — festive/occasion wear. Lovely photos,
-  wrong register for a delivery-management portfolio.
-
-### Replacing this with a real headshot
-
-Worth doing, and it takes about ten minutes: plain wall, face a window, blazer or a plain dark
-top, phone at eye level on portrait mode, shot by someone else from ~1.5 m. Drop the file in
-`../pics/`, point the portrait entry in `tools/build-images.py` at it and adjust the crop box,
-then re-run the script — the `<picture>` markup doesn't need to change.
-
-The script also supports `"treatment": "bw"` on any image entry, which applies a warm-neutral
-monochrome. It was tried on this portrait and dropped for looking flat against the rest of the
-page, but it's there if a future photo suits it.
-
-### Swapping a photo
-
-Edit the relevant entry in [`tools/build-images.py`](tools/build-images.py) — change `source`
-and, if needed, the `crop` box — then:
-
-```bash
-python tools/build-images.py
-```
-
-That regenerates the WebP + JPEG derivatives at both sizes, strips all metadata, and rebuilds
-`favicon.ico`. It needs only Pillow (`pip install Pillow`). The `<picture>` markup in
-`index.html` doesn't change unless you rename the outputs.
-
----
-
-## Running it locally
-
-No build. Either open `index.html` directly, or — better, because it makes `/resume/` work —
-serve the folder:
-
-```bash
-python -m http.server 4173
-```
-
-Then visit http://127.0.0.1:4173/
-
----
-
-## Layout
-
-```
-index.html            # the whole page
-css/
-  variables.css       # design tokens, dark + light
-  base.css            # reset, typography, .glass-card
-  background.css      # gradient orbs + grid
-  navbar.css  hero.css  blocks.css  photos.css  footer.css
-  responsive.css      # 1024 / 900 / 640 / 380 breakpoints
-js/main.js            # theme, nav, scroll-spy, reveals, badge
-assets/               # photos, resume PDF, favicon.svg
-tools/build-images.py # regenerates the image derivatives
-resume/index.html     # /resume → redirects to the PDF
-```
-
-## Notes on how it's built
-
-- **Theme** follows the OS by default, remembers a manual choice in `localStorage`, and is
-  applied by a tiny inline script in `<head>` so the page never flashes the wrong one.
-- **Contrast** was measured, not eyeballed: every distinct text style clears WCAG AA in both
-  themes. Filled buttons use `--accent-fill` (`#BF5100`) rather than Syracuse Orange, because
-  white on `#F76900` is only 3.0:1. The true orange is still used for every accent and label.
-- **No third-party requests** except Google Fonts. Icons are inline SVG and company marks are
-  CSS monograms, so nothing breaks on a locked-down corporate network.
-- **Motion** (orb drift, scroll reveals, smooth scrolling) is disabled under
-  `prefers-reduced-motion`.
-- **Not on the page, deliberately:** phone number, street address, and visa/work-authorisation
-  status. All three are on the resume or the application forms where they belong; none of them
-  belong on a page search engines index.
-
----
-
-© 2026 Aparna Ramesh
+The site uses local fonts and images; it requires no third-party requests to
+render. Print styles remove navigation and show program detail content.
